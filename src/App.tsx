@@ -10,7 +10,17 @@ import "lenis/dist/lenis.css";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 
 const concepts = {
-  "clear-living": { name:"Clear Living", theme:"living", kicker:"RESIDENTIAL AIR-DUCT CLEANING", title:"A closer look at what’s building up.", desc:"Professional duct cleaning centred on visible buildup, careful extraction and respect for the home around the work.", hero:"https://grapevine.911airduct.com/img/air-duct-cleaning-near-me.webp", about:"A cleaner duct starts with seeing the condition clearly.", accent:"VISIBLE DIFFERENCE", intro:"The priority is practical: access the agreed duct sections, remove accessible dust and debris, and leave the surrounding space considered." },
+  "clear-living": {
+    name: "Clear Living",
+    theme: "living",
+    kicker: "RESIDENTIAL AIR-DUCT CLEANING",
+    title: "A closer look at what’s building up.",
+    desc: "Professional duct cleaning centred on visible buildup, careful extraction and respect for the home around the work.",
+    hero: `${import.meta.env.BASE_URL}images/hero.jpg`,
+    about: "A cleaner duct starts with seeing the condition clearly.",
+    accent: "VISIBLE DIFFERENCE",
+    intro: "The priority is practical: access the agreed duct sections, remove accessible dust and debris, and leave the surrounding space considered."
+  },
 } as const;
 type Key = keyof typeof concepts;
 const processImages: Record<Key, [string, string, string]> = {
@@ -20,10 +30,19 @@ const processImages: Record<Key, [string, string, string]> = {
   `${import.meta.env.BASE_URL}images/process-3.jpg`
  ]
 };
-const visualAssets: Record<Key,{about:string;matter:string;why:string;services:[string,string,string]}> = {
- "clear-living":{about:"https://dryerventcleaninglamarque.com/assets/img/air-duct-clean-call.jpg",matter:"https://cleancarpetspring.com/img/air-duct-before-%26-after-cleaning.webp",why:`${import.meta.env.BASE_URL}images/why-inspection.jpg`,services:["https://cdn.marblism.com/MiScO0tj0Nt.webp","https://images.squarespace-cdn.com/content/v1/5efc0e891bb71f2bb32c3ada/1646262722877-HIGEONEPWY9OB4X5GO8C/Screen%2BShot%2B2022-03-02%2Bat%2B3.00.13%2BPM.png","https://cdn.prod.website-files.com/678a6ffbc04cfe4f45f44ae6/680b14a6b77eb7c331b22a51_Duct%20Cleaning1.webp"]}
+const visualAssets: Record<Key, { about: string; matter: string; why: string; services: [string, string, string] }> = {
+ "clear-living": {
+  about: `${import.meta.env.BASE_URL}images/about.jpg`,
+  matter: `${import.meta.env.BASE_URL}images/matter.webp`,
+  why: `${import.meta.env.BASE_URL}images/why-inspection.jpg`,
+  services: [
+   `${import.meta.env.BASE_URL}images/service-1.webp`,
+   `${import.meta.env.BASE_URL}images/service-2.png`,
+   `${import.meta.env.BASE_URL}images/service-3.webp`
+  ]
+ }
 };
-const comparisonImage = "https://powerhvacgta.ca/cdn/shop/files/air-duct-cleaning-process-by-power-hvac-services-inc.webp?v=1775443950&width=1500";
+const comparisonImage = `${import.meta.env.BASE_URL}images/comparison.webp`;
 const services = [
  {title:"Residential air-duct cleaning",text:"Cleaning accessible supply and return ductwork, registers and related components within the agreed scope.",tag:"FOR THE HOME",icon:House},
  {title:"Commercial ventilation care",text:"Duct cleaning planned around the building, access requirements and agreed areas of work.",tag:"FOR WORKPLACES",icon:Building2},
